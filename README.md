@@ -11,3 +11,4 @@ Project division:
 * Marvin:   Flight
 * open:     Passenger
 * open:     Seat
+* open:     Plane
