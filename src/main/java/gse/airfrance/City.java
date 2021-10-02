@@ -1,7 +1,10 @@
 
+<<<<<<< HEAD
 package gse.airfrance;
 
 
+=======
+>>>>>>> c4777fdf6dfb5270bc07dc56690e662bbc9d5a38
 /**
   * This class represents the City class for the airport management system.
   *
