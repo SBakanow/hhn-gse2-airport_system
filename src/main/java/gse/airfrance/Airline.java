@@ -20,7 +20,7 @@ public class Airline {
   public Airline(String IATACode,String name)
   {
     this.IATACode = IATACode;
-    this.IATACode = name;
+    this.name = name;
   }
 
   public String getName()
