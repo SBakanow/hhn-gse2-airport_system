@@ -44,7 +44,7 @@ public class Pilot {
   }
 
   public String toString() {
-    return "<" + this.getClass().getSimpleName() + "> " + "<" + getName() + ">";
+    return this.getClass().getSimpleName() + " " + getName();
   }
 
   public void hire() {
