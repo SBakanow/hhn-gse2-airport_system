@@ -1,6 +1,7 @@
 package GSE.AirFrance;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Sergej Bakanow
@@ -33,7 +34,7 @@ public class Pilot {
     this.name = name;
   }
 
-  public void setEmployer(Ariline employer) {
+  public void setEmployer(Airline employer) {
     this.employer = employer;
   }
 
