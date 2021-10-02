@@ -24,7 +24,8 @@ public class Pilot {
    */
   private Set<Flight> assignments = new HashSet<>();
   
-  public Pilot() {
+  public Pilot(String name) {
+    this.name = name;
     System.out.println(this + " created");
   }
   
