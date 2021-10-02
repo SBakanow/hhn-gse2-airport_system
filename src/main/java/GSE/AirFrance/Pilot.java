@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * The pilot class for the airport management system.
+ *
  * @author Sergej Bakanow
  */
 
@@ -26,7 +28,7 @@ public class Pilot {
     return employer;
   }
 
-  public Set<Flight> getAssignments(){
+  public Set<Flight> getAssignments() {
     return assignments;
   }
 
