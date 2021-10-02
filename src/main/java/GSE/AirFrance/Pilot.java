@@ -15,8 +15,7 @@ public class Pilot {
   private Airline employer;
   private Set<Flight> assignments = new HashSet<>();
 
-  public Pilot(String name) {
-    this.name = name;
+  public Pilot() {
     System.out.println(this + " created");
   }
 
