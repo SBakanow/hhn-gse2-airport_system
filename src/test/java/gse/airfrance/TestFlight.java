@@ -1,4 +1,4 @@
-package GSE.AirFrance;
+package gse.airfrance;
 
 import org.junit.Assert;
 import org.junit.Before;

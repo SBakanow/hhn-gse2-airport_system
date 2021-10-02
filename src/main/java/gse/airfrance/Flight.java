@@ -1,4 +1,4 @@
-package GSE.AirFrance;
+package gse.airfrance;
 
 import java.util.Date;
 /**
