@@ -137,9 +137,11 @@ public class Flight {
     this.delayed = delayed;
   }
 
-  public void delayed() {
+  public boolean delayed() {
     String out = this.toString();
     out += delayed ? " is delayed!" : " is not delayed!";
     System.out.println(out);
+
+    return delayed;
   }
 }

@@ -41,8 +41,6 @@ public class TestFlight {
         flight1.addCoPilot(firstCoPilot);
         flight1.addCoPilot(secondCoPilot);
         flight1.addCoPilot(thirdCoPilot);
-        flight1.setDelayed(true);
-        flight1.delayed();
         Assert.assertNotNull(firstCoPilot);
         Assert.assertNotNull(secondCoPilot);
         Assert.assertEquals(2, flight1.getCoPilots().length);

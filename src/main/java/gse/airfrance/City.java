@@ -11,7 +11,7 @@ public final class City {
     /**
       * The constructor takes in the name of the city.
       *
-      * @param The name of the city.
+      * @param name The name of the city.
       */
     public City(final String name) {
         infrastructures = new Airport[5];
@@ -27,11 +27,11 @@ public final class City {
       * The list can hold a maximum of five airports, any attempt to add more
       * than that will do nothing.
       *
-      * @param The airport to add.
+      * @param airport The airport to add.
       * @return True if the operation was successfull, otherwise false.
       */
     public boolean addInfrastructure(final Airport airport) {
-        if (position < infrastructures.length) {
+        if (position < infrastructures.length && airport != null) {
             infrastructures[position] = airport;
             ++position;
             return true;
