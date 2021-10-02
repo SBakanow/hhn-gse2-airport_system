@@ -15,6 +15,7 @@ public class TestFlight {
     Pilot firstCoPilot;
     Pilot secondCoPilot;
     Pilot thirdCoPilot;
+    Airline airFrance;
     @Before
     public void setup() {
         flight1 = new Flight(date, (short) 5);
@@ -22,6 +23,7 @@ public class TestFlight {
         firstCoPilot = new Pilot("Jane Doe");
         secondCoPilot = new Pilot("James Dodo");
         thirdCoPilot = new Pilot("Too many");
+        airFrance = new Airline("1234", "Air France");
     }
 
     @Test
@@ -44,6 +46,12 @@ public class TestFlight {
         Assert.assertEquals(2, flight1.getCoPilots().length);
     }
 
+    @Test
+    public void EmployerTest() {
+        captain.setEmployer(airFrance);
+        Assert.assertEquals(airFrance, captain.getEmployer());
+    }
+    
     @Test @Ignore
     public void GeneralFailTest() {
         Assert.assertNotNull(null);
