@@ -18,7 +18,7 @@ public class TestFlight {
     Airline airFrance;
     @Before
     public void setup() {
-        flight1 = new Flight(date, (short) 5);
+        flight1 = new Flight(date,  5);
         captain = new Pilot("John Doe");
         firstCoPilot = new Pilot("Jane Dodo");
         secondCoPilot = new Pilot("James Dodo");
@@ -41,6 +41,8 @@ public class TestFlight {
         flight1.addCoPilot(firstCoPilot);
         flight1.addCoPilot(secondCoPilot);
         flight1.addCoPilot(thirdCoPilot);
+        flight1.setDelayed(true);
+        flight1.delayed();
         Assert.assertNotNull(firstCoPilot);
         Assert.assertNotNull(secondCoPilot);
         Assert.assertEquals(2, flight1.getCoPilots().length);
