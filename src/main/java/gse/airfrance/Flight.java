@@ -15,9 +15,9 @@ public class Flight {
   private final int flightNum;
 
   private Passenger[] thePassengers = new Passenger[MAX_NUMBER_PASSENGERS];
-  private Airport[] origins = new Airport[5];
-  private Airport[] destinations = new Airport[5];
-  private Pilot[] coPilots = new Pilot[2];
+  private Airport[] origins = new Airport[MAX_NUMBER_STOPS];
+  private Airport[] destinations = new Airport[MAX_NUMBER_STOPS];
+  private Pilot[] coPilots = new Pilot[MAX_NUMBER_CO_PILOTS];
   private Pilot captain;
   private Plane resource;
   private Airline theAirline;
