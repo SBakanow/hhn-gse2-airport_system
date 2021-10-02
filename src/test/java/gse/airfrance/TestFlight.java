@@ -20,7 +20,7 @@ public class TestFlight {
     public void setup() {
         flight1 = new Flight(date, (short) 5);
         captain = new Pilot("John Doe");
-        firstCoPilot = new Pilot("Jane Doe");
+        firstCoPilot = new Pilot("Jane Dodo");
         secondCoPilot = new Pilot("James Dodo");
         thirdCoPilot = new Pilot("Too many");
         airFrance = new Airline("1234", "Air France");
@@ -44,12 +44,21 @@ public class TestFlight {
         Assert.assertNotNull(firstCoPilot);
         Assert.assertNotNull(secondCoPilot);
         Assert.assertEquals(2, flight1.getCoPilots().length);
+        secondCoPilot.setName("Jane Doe");
+        Assert.assertEquals("Jane Doe", secondCoPilot.getName());
     }
 
     @Test
     public void EmployerTest() {
         captain.setEmployer(airFrance);
         Assert.assertEquals(airFrance, captain.getEmployer());
+    }
+    
+    @Test
+    public void AssignmentTest() {
+        captain.addAssignment(flight1);
+        captain.addAssignment(flight1);
+        Assert.assertEquals(1, captain.getAssignments().size());
     }
     
     @Test @Ignore
