@@ -11,4 +11,4 @@ Project division:
 * Marvin:   Flight
 * Dennis A: Passenger
 * open:     Seat
-* open:     Plane
+* Emin:     Plane
