@@ -12,7 +12,7 @@ public class Flight {
   private final byte MAX_NUMBER_STOPS = 5;
   private final byte MAX_NUMBER_CO_PILOTS= 2;
   private final Date date;
-  private final int flightNum;
+  private final String flightNum;
 
   private Seat[] theSeats = new Seat[MAX_NUMBER_OF_SEATS];
   private Airport[] origins = new Airport[MAX_NUMBER_STOPS];
@@ -29,7 +29,7 @@ public class Flight {
 
   private boolean delayed = false;
 
-  public Flight(Date date, int flightNum) {
+  public Flight(Date date, String flightNum) {
     this.date = date;
     this.flightNum = flightNum;
     System.out.println(this + " created.");
@@ -65,7 +65,7 @@ public class Flight {
     return origins;
   }
 
-  public int getFlightNum() {
+  public String getFlightNum() {
     return flightNum;
   }
 

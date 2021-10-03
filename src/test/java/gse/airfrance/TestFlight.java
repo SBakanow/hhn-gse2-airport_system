@@ -18,7 +18,7 @@ public class TestFlight {
     Airline airFrance;
     @Before
     public void setup() {
-        flight1 = new Flight(date,  5);
+        flight1 = new Flight(date,  "AB5");
         captain = new Pilot("John Doe");
         firstCoPilot = new Pilot("Jane Dodo");
         secondCoPilot = new Pilot("James Dodo");
