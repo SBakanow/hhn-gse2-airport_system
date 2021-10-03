@@ -9,6 +9,6 @@ Project division:
 * Noah:     Airport
 * Sergej:   Pilot
 * Marvin:   Flight
-* open:     Passenger
+* Dennis A: Passenger
 * open:     Seat
 * open:     Plane
