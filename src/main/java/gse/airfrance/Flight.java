@@ -8,13 +8,13 @@ import java.util.Date;
  * @version 0.1
  */
 public class Flight {
-  private final short MAX_NUMBER_PASSENGERS = 853;
+  private final short MAX_NUMBER_OF_SEATS = 853;
   private final byte MAX_NUMBER_STOPS = 5;
   private final byte MAX_NUMBER_CO_PILOTS= 2;
   private final Date date;
   private final int flightNum;
 
-  private Passenger[] thePassengers = new Passenger[MAX_NUMBER_PASSENGERS];
+  private Seat[] theSeats = new Seat[MAX_NUMBER_OF_SEATS];
   private Airport[] origins = new Airport[MAX_NUMBER_STOPS];
   private Airport[] destinations = new Airport[MAX_NUMBER_STOPS];
   private Pilot[] coPilots = new Pilot[MAX_NUMBER_CO_PILOTS];
@@ -25,14 +25,14 @@ public class Flight {
   private int currentNumberOrigins = 0;
   private int currentNumberDestinations = 0;
   private int currentNumberCoPilots = 0;
-  private int currentNumberPassengers = 0;
+  private int currentNumberSeats = 0;
 
   private boolean delayed = false;
 
   public Flight(Date date, int flightNum) {
     this.date = date;
     this.flightNum = flightNum;
-    System.out.println(this + " created");
+    System.out.println(this + " created.");
   }
 
   // Begin of the getters
@@ -53,8 +53,8 @@ public class Flight {
     return theAirline;
   }
 
-  public Passenger[] getThePassengers() {
-    return thePassengers;
+  public Seat[] getTheSeats() {
+    return theSeats;
   }
 
   public Airport[] getDestinations() {
@@ -139,20 +139,20 @@ public class Flight {
   }
 
   /**
-   * Every plane has a different capacity of passengers, but with the AIRBUS370 we got a maximum of 853.
-   * This method can be used to add a passenger to the flight.
-   * There can be no more than 853 passengers.
+   * Every plane has a different capacity of seats, but with the AIRBUS370 we got a maximum of 853.
+   * This method can be used to add a seat to the flight.
+   * There can be no more than 853 seats.
    * There is no check with the machine used if max capacity is reached/over capacity.
-   * There can be no passanger added with a null reference.
+   * There must not be a seat added with a null reference.
    *
-   * @param passenger Passenger to be added (one at a time)
+   * @param seat Seat to be added (one at a time)
    * @return True if the action was successful, else false.
    */
-  public boolean addPassenger(Passenger passenger) {
+  public boolean addSeats(Seat seat) {
     boolean result = false;
-    if(passenger != null && currentNumberPassengers < MAX_NUMBER_PASSENGERS) {
-      thePassengers[currentNumberPassengers] = passenger;
-      currentNumberPassengers++;
+    if(seat != null && currentNumberSeats < MAX_NUMBER_OF_SEATS) {
+      theSeats[currentNumberSeats] = seat;
+      currentNumberSeats++;
       result = true;
     }
     return result;

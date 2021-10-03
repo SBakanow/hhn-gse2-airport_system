@@ -1,9 +1,8 @@
 package gse.airfrance;
 
 
-import java.sql.SQLOutput;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * The airline class for the airport management system.
@@ -21,6 +20,8 @@ public class Airline {
   {
     this.IATACode = IATACode;
     this.name = name;
+
+    System.out.println(this + " created.");
   }
 
   public String getName()
@@ -56,7 +57,7 @@ public class Airline {
   @Override
   public String toString()
   {
-    return this.getClass().getSimpleName() + "" + getName();
+    return this.getClass().getSimpleName() + " " + getName();
   }
 
   public void expensive()
