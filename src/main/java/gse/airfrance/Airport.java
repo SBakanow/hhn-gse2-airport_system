@@ -4,7 +4,7 @@ public final class Airport {
 
     //Airport
     private String name;
-    private final String JATACode;
+    private final String IATACode;
 
     //List
     private List<Flight> departures;
@@ -18,15 +18,15 @@ public final class Airport {
     private int currentNumberCities = 0;
 
     /**
-     * The constructor takes the name, JATACode and associated city
+     * The constructor takes the name, IATA-Code and associated city
      *
      * @param name     The name of this Airline
-     * @param jataCode The JATACode associated with the Airport
+     * @param iataCode The IATA-Code associated with the Airport
      * @param city     The associated City
      */
-    public Airport(final String name, final String jataCode) {
+    public Airport(final String name, final String IATACode) {
         this.name = name;
-        this.JATACode = jataCode;
+        this.IATACode = IATAode;
         departures = new Flight[];
         arrivals = new Flight[];
         catchments = new City[MAX_NUMBER_CITIES;
@@ -44,12 +44,12 @@ public final class Airport {
     }
 
     /**
-     * Get the JATACode.
+     * Get the IATA-Code.
      *
-     * @return The JATACode.
+     * @return The IATA-Code.
      */
-    public String getJATACode() {
-        return JATACode;
+    public String getIATACode() {
+        return IATACode;
     }
 
     /**
@@ -121,11 +121,11 @@ public final class Airport {
     }
 
     /**
-     * Method sends back a String of the airports name and JATACode.
+     * Method sends back a String of the airports name and IATA-Code.
      *
      * @return String of the airport.
      */
-    public String toString() {
-        return this.getClass().getSimpleName() + " " + name + " | JATACode " + JATACode
+    public String toString()
+        return this.getClass().getSimpleName() + " " + name + " | IATA-Code " + iataCode
     }
 }
