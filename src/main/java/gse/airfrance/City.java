@@ -16,7 +16,7 @@ public final class City {
     public City(final String name) {
         infrastructures = new Airport[5];
         this.name       = name;
-        arrayPosition = 0;
+        arrayPosition   = 0;
 
         System.out.println(this + " created.");
     }
@@ -40,6 +40,13 @@ public final class City {
     }
 
     /**
+      * Set the name of the city.
+      *
+      * @param Name of the city.
+      */
+    public void setName(final String name) { this.name = name; }
+
+    /**
       * Get the list of airports.
       *
       * @return The list of airports.
@@ -60,15 +67,10 @@ public final class City {
 
 
     private final Airport[] infrastructures;
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    private String    name;
+    private String          name;
     // Since Java can't do local static, we need a private position field to
     // know where in the static array we are and to make sure not to go out
     // of bounds when we try to add more elements into the array than possible.
-    private byte arrayPosition;
+    private byte            arrayPosition;
 }
 
