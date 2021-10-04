@@ -32,4 +32,28 @@ public class Plane {
     System.out.println(this.toString() + " created");
   }
 
+  // Start of getters
+  public String getModel() {
+    return model;
+  }
+
+  public String getSerialNum() {
+    return serialNum;
+  }
+
+  public String getTailNr() {
+    return tailNr;
+  }
+
+  public Seat[] getTheSeats() {
+    return theSeats;
+  }
+
+  public double getHoursFlown() {
+    return hoursFlown;
+  }
+
+  public ArrayList<Flight> getMissions() {
+    return missions;
+  }
 }
