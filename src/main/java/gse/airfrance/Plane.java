@@ -10,7 +10,6 @@ import java.util.ArrayList;
 public class Plane {
 
   private static final int MAX_NUM_OF_SEATS = 853;
-  private static final int MIN_NUM_OF_SEATS = 10;
 
   private final String model;
   private final String serialNum;
