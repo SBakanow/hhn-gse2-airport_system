@@ -97,6 +97,7 @@ public class Plane {
 
   @Override
   public String toString() {
-    return this.getClass().getSimpleName() + " " + model + " " + serialNum + " " + tailNr;
+    return this.getClass().getSimpleName() + " " + model + " serialNum:" + serialNum
+        + " tailNr:" + tailNr;
   }
 }
