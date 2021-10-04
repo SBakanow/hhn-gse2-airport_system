@@ -99,4 +99,8 @@ public class Plane {
     return this.getClass().getSimpleName() + " " + model + " serialNum:" + serialNum
         + " tailNr:" + tailNr;
   }
+
+  public void use() {
+    System.out.println(this + "is used");
+  }
 }
