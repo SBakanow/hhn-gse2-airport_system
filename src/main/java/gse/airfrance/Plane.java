@@ -56,4 +56,26 @@ public class Plane {
   public ArrayList<Flight> getMissions() {
     return missions;
   }
+
+  // Start of setters/"adders"
+  /**
+   * Adds a seat to the list of seats.
+   *
+   * @param seat      seat to add.
+   * @param position  position of the added seat.
+   * @return false if
+   *<ul>
+   *   <li>the given seat is a null reference</li>
+   *   <li>the position is greater then the max number of seats</li>
+   *   <li>a seat already exists on the given position</li>
+   *</ul> otherwise true
+   */
+  public boolean addSeat(final Seat seat, final int position) {
+    if (seat == null || position < MAX_NUM_OF_SEATS || theSeats[position] != null) {
+      return false;
+    }
+
+    theSeats[position] = seat;
+    return true;
+  }
 }
