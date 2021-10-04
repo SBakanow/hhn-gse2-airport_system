@@ -78,4 +78,13 @@ public class Plane {
     theSeats[position] = seat;
     return true;
   }
+
+  /**
+   * Adds a mission to the list of missions.
+   *
+   * @param mission the mission to add.
+   */
+  public void addMission(final Flight mission) {
+    missions.add(mission);
+  }
 }
