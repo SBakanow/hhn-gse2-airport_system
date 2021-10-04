@@ -13,10 +13,10 @@ public class Plane {
 
   private final String model;
   private final String serialNum;
-  private final String tailNr;
   private final Seat[] theSeats = new Seat[MAX_NUM_OF_SEATS];
   private final ArrayList<Flight> missions = new ArrayList<>();
 
+  private String tailNr;
   private double hoursFlown;
   private int numberOfSeats;
 
@@ -89,6 +89,10 @@ public class Plane {
    */
   public void addMission(final Flight mission) {
     missions.add(mission);
+  }
+
+  public void setTailNr(String tailNr) {
+    this.tailNr = tailNr;
   }
 
   public void setHoursFlown(double hours) {
