@@ -18,6 +18,7 @@ public class Plane {
   private final ArrayList<Flight> missions = new ArrayList<>();
 
   private double hoursFlown;
+  private int numberOfSeats;
 
   /**
    * Constructor for a plane in an air transportation planning system.
@@ -31,6 +32,7 @@ public class Plane {
     this.serialNum = serialNum;
     this.tailNr = tailNr;
     hoursFlown = 0.0;
+    numberOfSeats = 0;
     System.out.println(this + " created");
   }
 
@@ -64,20 +66,19 @@ public class Plane {
    * Adds a seat to the list of seats.
    *
    * @param seat      seat to add.
-   * @param position  position of the added seat.
    * @return false if
    *<ul>
    *   <li>the given seat is a null reference</li>
-   *   <li>the position is greater then the max number of seats</li>
-   *   <li>a seat already exists on the given position</li>
+   *   <li>the maximum number of seats is already reached</li>
    *</ul> otherwise true
    */
-  public boolean addSeat(final Seat seat, final int position) {
-    if (seat == null || position >= MAX_NUM_OF_SEATS || theSeats[position] != null) {
+  public boolean addSeat(final Seat seat) {
+    if (seat == null || numberOfSeats == MAX_NUM_OF_SEATS) {
       return false;
     }
 
-    theSeats[position] = seat;
+    theSeats[numberOfSeats] = seat;
+    numberOfSeats++;
     return true;
   }
 
