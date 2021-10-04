@@ -12,11 +12,11 @@ import java.util.Set;
 public class Airline {
 
   private String name;
-  private String IATACode;
+  private final String IATACode;
   private Set<Pilot> employees = new HashSet<>();
   private Set<Flight> theFlights = new HashSet<>();
 
-  public Airline(String IATACode,String name)
+  public Airline(String IATACode, String name)
   {
     this.IATACode = IATACode;
     this.name = name;
@@ -44,20 +44,24 @@ public class Airline {
     return theFlights;
   }
 
-  public void setEmployee(Pilot employee)
+  public void addEmployee(Pilot employee)
   {
     employees.add(employee);
   }
 
-  public void setTheFlights(Flight theFlight)
+  public void addTheFlights(Flight theFlight)
   {
     theFlights.add(theFlight);
+  }
+
+  public void setName(final String name) {
+    this.name = name;
   }
 
   @Override
   public String toString()
   {
-    return this.getClass().getSimpleName() + " " + getName();
+    return this.getClass().getSimpleName() + " " + getName() + " "+ IATACode;
   }
 
   public void expensive()
