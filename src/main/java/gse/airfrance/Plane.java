@@ -87,4 +87,8 @@ public class Plane {
   public void addMission(final Flight mission) {
     missions.add(mission);
   }
+
+  public void setHoursFlown(double hours) {
+    hoursFlown = hours;
+  }
 }
