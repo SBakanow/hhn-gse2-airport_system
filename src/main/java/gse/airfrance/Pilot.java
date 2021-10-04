@@ -26,7 +26,7 @@ public class Pilot {
   
   public Pilot(String name) {
     this.name = name;
-    System.out.println(this + " created");
+    System.out.println(this + " created.");
   }
   
   /**
@@ -97,14 +97,14 @@ public class Pilot {
    * Hires a pilot.
    */
   public void hire() {
-    System.out.println(this + " is hired");
+    System.out.println(this + " is hired.");
   }
   
   /**
    * Fires a pilot.
    */
   public void fire() {
-    System.out.println(this + " is fired");
+    System.out.println(this + " is fired.");
   }
 }
 

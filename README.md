@@ -10,5 +10,5 @@ Project division:
 * Sergej:   Pilot
 * Marvin:   Flight
 * Dennis A: Passenger
-* open:     Seat
+* Dennis S: Seat
 * Emin:     Plane
