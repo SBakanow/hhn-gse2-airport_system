@@ -73,7 +73,7 @@ public class Plane {
    *</ul> otherwise true
    */
   public boolean addSeat(final Seat seat, final int position) {
-    if (seat == null || position < MAX_NUM_OF_SEATS || theSeats[position] != null) {
+    if (seat == null || position >= MAX_NUM_OF_SEATS || theSeats[position] != null) {
       return false;
     }
 
