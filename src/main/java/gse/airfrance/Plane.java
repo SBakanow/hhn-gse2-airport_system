@@ -91,4 +91,9 @@ public class Plane {
   public void setHoursFlown(double hours) {
     hoursFlown = hours;
   }
+
+  @Override
+  public String toString() {
+    return this.getClass().getSimpleName() + " " + model + " " + serialNum + " " + tailNr;
+  }
 }
