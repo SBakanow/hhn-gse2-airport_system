@@ -16,20 +16,23 @@ public class Plane {
   private final String serialNum;
   private final String tailNr;
   private final Seat[] theSeats = new Seat[MAX_NUM_OF_SEATS];
+  private final ArrayList<Flight> missions = new ArrayList<>();
 
   private double hoursFlown;
-  private ArrayList<Flight> missions;
 
   /**
-   * Constructor for a plane.
+   * Constructor for a plane in an air transportation planning system.
+   *
+   * @param model     the model of the plane.
+   * @param serialNum the serial number of the plane.
+   * @param tailNr    the tail number of the plane.
    */
   public Plane(final String model, final String serialNum, final String tailNr) {
     this.model = model;
     this.serialNum = serialNum;
     this.tailNr = tailNr;
-    hoursFlown = 0;
-    missions = new ArrayList<>();
-    System.out.println(this.toString() + " created");
+    hoursFlown = 0.0;
+    System.out.println(this + " created");
   }
 
   // Start of getters
