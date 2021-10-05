@@ -13,44 +13,37 @@ public class Airline {
 
   private String name;
   private final String IATACode;
-  private Set<Pilot> employees = new HashSet<>();
-  private Set<Flight> theFlights = new HashSet<>();
+  private final Set<Pilot> employees = new HashSet<>();
+  private final Set<Flight> theFlights = new HashSet<>();
 
-  public Airline(String IATACode, String name)
-  {
+  public Airline(String IATACode, String name) {
     this.IATACode = IATACode;
     this.name = name;
 
     System.out.println(this + " created.");
   }
 
-  public String getName()
-  {
+  public String getName() {
     return name;
   }
 
-  public String getIATACode()
-  {
+  public String getIATACode() {
     return IATACode;
   }
 
-  public Set<Pilot> getEmployees()
-  {
+  public Set<Pilot> getEmployees() {
     return employees;
   }
 
-  public Set<Flight> getTheFlights()
-  {
+  public Set<Flight> getTheFlights() {
     return theFlights;
   }
 
-  public void addEmployee(Pilot employee)
-  {
+  public void addEmployee(Pilot employee) {
     employees.add(employee);
   }
 
-  public void addTheFlights(Flight theFlight)
-  {
+  public void addTheFlights(Flight theFlight) {
     theFlights.add(theFlight);
   }
 
@@ -59,19 +52,12 @@ public class Airline {
   }
 
   @Override
-  public String toString()
-  {
-    return this.getClass().getSimpleName() + " " + getName() + " "+ IATACode;
+  public String toString() {
+    return this.getClass().getSimpleName() + " " + name + " " + IATACode;
   }
 
-  public void expensive()
-  {
+  public void expensive() {
     System.out.println(this + " is expensive");
   }
-
-
-
-
-
 
 }

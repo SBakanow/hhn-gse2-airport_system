@@ -14,10 +14,10 @@ public class Flight {
   private final Date date;
   private final String flightNum;
 
-  private Seat[] theSeats = new Seat[MAX_NUMBER_OF_SEATS];
-  private Airport[] origins = new Airport[MAX_NUMBER_STOPS];
-  private Airport[] destinations = new Airport[MAX_NUMBER_STOPS];
-  private Pilot[] coPilots = new Pilot[MAX_NUMBER_CO_PILOTS];
+  private final Seat[] theSeats = new Seat[MAX_NUMBER_OF_SEATS];
+  private final Airport[] origins = new Airport[MAX_NUMBER_STOPS];
+  private final Airport[] destinations = new Airport[MAX_NUMBER_STOPS];
+  private final Pilot[] coPilots = new Pilot[MAX_NUMBER_CO_PILOTS];
   private Pilot captain;
   private Plane resource;
   private Airline theAirline;
@@ -26,8 +26,6 @@ public class Flight {
   private int currentNumberDestinations = 0;
   private int currentNumberCoPilots = 0;
   private int currentNumberSeats = 0;
-
-  private boolean delayed = false;
 
   public Flight(Date date, String flightNum) {
     this.date = date;
@@ -71,10 +69,6 @@ public class Flight {
 
   public Date getDate() {
     return date;
-  }
-
-  public boolean isDelayed() {
-    return delayed;
   }
 
   // Begin of the setters
@@ -181,24 +175,23 @@ public class Flight {
    *
    * @return String of the flight
    */
+  @Override
   public String toString() {
     return this.getClass().getSimpleName() + " number "+ flightNum + " starting at " + date.toString();
   }
 
-  public void setDelayed(boolean delayed) {
-    this.delayed = delayed;
+  /**
+   * Prints the flight and a note that the flight is delayed.
+   */
+  public void delayed() {
+    System.out.println(this + " is delayed!");
   }
 
   /**
-   * Prints the flight and a note if the flight is delayed or in time/schedule.
-   *
-   * @return Returns the value of delayed
+   * Prints the flight and a note that the flight is canceled.
    */
-  public boolean delayed() {
-    String out = this.toString();
-    out += delayed ? " is delayed!" : " is not delayed!";
-    System.out.println(out);
-
-    return delayed;
+  public void canceled() {
+    System.out.println(this + " is canceled.");
   }
+
 }

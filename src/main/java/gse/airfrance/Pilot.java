@@ -22,7 +22,7 @@ public class Pilot {
   /**
    * The different flight assignments the pilot has.
    */
-  private Set<Flight> assignments = new HashSet<>();
+  private final Set<Flight> assignments = new HashSet<>();
   
   public Pilot(String name) {
     this.name = name;
@@ -90,7 +90,7 @@ public class Pilot {
    */
   @Override
   public String toString() {
-    return this.getClass().getSimpleName() + " " + getName();
+    return this.getClass().getSimpleName() + " " + name;
   }
   
   /**

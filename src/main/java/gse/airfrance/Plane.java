@@ -33,7 +33,7 @@ public class Plane {
     this.tailNr = tailNr;
     hoursFlown = 0.0;
     numberOfSeats = 0;
-    System.out.println(this + " created");
+    System.out.println(this + " created.");
   }
 
   // Start of getters
@@ -62,15 +62,16 @@ public class Plane {
   }
 
   // Start of setters/"adders"
+
   /**
    * Adds a seat to the list of seats.
    *
-   * @param seat      seat to add.
+   * @param seat seat to add.
    * @return false if
-   *<ul>
+   * <ul>
    *   <li>the given seat is a null reference</li>
    *   <li>the maximum number of seats is already reached</li>
-   *</ul> otherwise true
+   * </ul> otherwise true
    */
   public boolean addSeat(final Seat seat) {
     if (seat == null || numberOfSeats == MAX_NUM_OF_SEATS) {
@@ -101,11 +102,26 @@ public class Plane {
 
   @Override
   public String toString() {
-    return this.getClass().getSimpleName() + " " + model + " serialNum:" + serialNum
-        + " tailNr:" + tailNr;
+    return this.getClass().getSimpleName() + " " + model;
   }
 
-  public void use() {
-    System.out.println(this + "is used");
+  public void refuel() {
+    System.out.println(this + " is refueled.");
+  }
+
+  public void clean() {
+    System.out.println(this + " is cleaned.");
+  }
+
+  public void takeOff() {
+    System.out.println(this + " has taken off.");
+  }
+
+  public void land() {
+    System.out.println(this + " has landed.");
+  }
+
+  public void deIce() {
+    System.out.println(this + " was de-iced.");
   }
 }

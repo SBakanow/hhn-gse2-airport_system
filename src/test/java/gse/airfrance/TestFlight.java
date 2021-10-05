@@ -16,6 +16,11 @@ public class TestFlight {
     Pilot secondCoPilot;
     Pilot thirdCoPilot;
     Airline airFrance;
+    Airport jfk;
+    City nyc;
+    Passenger jeff;
+    Plane a380;
+    Seat businessClass;
     @Before
     public void setup() {
         flight1 = new Flight(date,  "AB5");
@@ -24,6 +29,11 @@ public class TestFlight {
         secondCoPilot = new Pilot("James Dodo");
         thirdCoPilot = new Pilot("Too many");
         airFrance = new Airline("1234", "Air France");
+        jfk = new Airport("John F Kennedy Airport", "JFK0");
+        nyc = new City("New York City");
+        jeff = new Passenger("Jeff Bezos");
+        a380 = new Plane("Airbus A420", "420", "A420");
+        businessClass = new Seat("A69");
     }
 
     @Test
