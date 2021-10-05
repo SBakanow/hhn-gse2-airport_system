@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class of the Airport
+ * The airport class for the airport management system.
  *
  * @author Noah Schmidt
  */
@@ -27,18 +27,17 @@ public final class Airport {
   private int currentNumberCities = 0;
 
   /**
-   * The constructor takes the name, IATA-Code and associated city
+   * The constructor takes the name, IATACode.
    *
    * @param name     The name of this Airline
-   * @param IATACode The IATA-Code associated with the Airport
+   * @param IATACode The IATACode associated with the Airport
    */
   public Airport(final String name, final String IATACode) {
     this.name = name;
     this.IATACode = IATACode;
     System.out.println(this + " created.");
   }
-
-
+  
   /**
    * Get the name of the airport.
    *
@@ -49,9 +48,9 @@ public final class Airport {
   }
 
   /**
-   * Get the IATA-Code.
+   * Get the IATACode.
    *
-   * @return The IATA-Code.
+   * @return The IATACode.
    */
   public String getIATACode() {
     return IATACode;
@@ -128,7 +127,7 @@ public final class Airport {
   }
 
   /**
-   * Method sends back a String of the airports name and IATA-Code.
+   * Method sends back a String of the airports name and IATACode.
    *
    * @return String of the airport.
    */

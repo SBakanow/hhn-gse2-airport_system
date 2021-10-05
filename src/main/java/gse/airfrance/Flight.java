@@ -1,16 +1,18 @@
 package gse.airfrance;
 
 import java.util.Date;
+
 /**
- * The flight class for the airport management system
+ * The flight class for the airport management system.
  *
  * @author Marvin Simon
  * @version 0.1
  */
 public class Flight {
+  
   private final short MAX_NUMBER_OF_SEATS = 853;
   private final byte MAX_NUMBER_STOPS = 5;
-  private final byte MAX_NUMBER_CO_PILOTS= 2;
+  private final byte MAX_NUMBER_CO_PILOTS = 2;
   private final Date date;
   private final String flightNum;
 
@@ -97,7 +99,7 @@ public class Flight {
   /**
    * Add origin airports to the flight.
    * There can be more than one origin airport because stopovers are possible.
-   * There can be at max 5 stop overs.
+   * There can be at max 5 stopovers.
    * The stopover must be a valid airport, not a null reference.
    *
    * @param origin Origin Airport
@@ -105,7 +107,7 @@ public class Flight {
    */
   public boolean addOrigin(Airport origin) {
     boolean result = false;
-    if(origin != null && currentNumberOrigins < MAX_NUMBER_STOPS) {
+    if (origin != null && currentNumberOrigins < MAX_NUMBER_STOPS) {
       origins[currentNumberOrigins] = origin;
       currentNumberOrigins++;
       result = true;
@@ -124,7 +126,7 @@ public class Flight {
    */
   public boolean addDestination(Airport destination) {
     boolean result = false;
-    if(destination != null && currentNumberDestinations < MAX_NUMBER_STOPS) {
+    if (destination != null && currentNumberDestinations < MAX_NUMBER_STOPS) {
       destinations[currentNumberDestinations] = destination;
       currentNumberDestinations++;
       result = true;
@@ -133,7 +135,7 @@ public class Flight {
   }
 
   /**
-   * Every plane has a different capacity of seats, but with the AIRBUS370 we got a maximum of 853.
+   * Every plane has a different capacity of seats, but with the AIRBUS380 we got a maximum of 853.
    * This method can be used to add a seat to the flight.
    * There can be no more than 853 seats.
    * There is no check with the machine used if max capacity is reached/over capacity.
@@ -144,7 +146,7 @@ public class Flight {
    */
   public boolean addSeats(Seat seat) {
     boolean result = false;
-    if(seat != null && currentNumberSeats < MAX_NUMBER_OF_SEATS) {
+    if (seat != null && currentNumberSeats < MAX_NUMBER_OF_SEATS) {
       theSeats[currentNumberSeats] = seat;
       currentNumberSeats++;
       result = true;
@@ -162,7 +164,7 @@ public class Flight {
    */
   public boolean addCoPilot(Pilot coPilot) {
     boolean result = false;
-    if(coPilot != null && currentNumberCoPilots < MAX_NUMBER_CO_PILOTS) {
+    if (coPilot != null && currentNumberCoPilots < MAX_NUMBER_CO_PILOTS) {
       coPilots[currentNumberCoPilots] = coPilot;
       currentNumberCoPilots++;
       result = true;
@@ -177,7 +179,8 @@ public class Flight {
    */
   @Override
   public String toString() {
-    return this.getClass().getSimpleName() + " number "+ flightNum + " starting at " + date.toString();
+    return this.getClass().getSimpleName() + " number " + flightNum + " starting at "
+        + date.toString();
   }
 
   /**
@@ -193,5 +196,4 @@ public class Flight {
   public void canceled() {
     System.out.println(this + " is canceled.");
   }
-
 }

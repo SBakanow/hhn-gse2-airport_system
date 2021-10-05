@@ -68,10 +68,10 @@ public class Plane {
    *
    * @param seat seat to add.
    * @return false if
-   * <ul>
-   *   <li>the given seat is a null reference</li>
-   *   <li>the maximum number of seats is already reached</li>
-   * </ul> otherwise true
+   *      <ul>
+   *      <li>the given seat is a null reference</li>
+   *      <li>the maximum number of seats is already reached</li>
+   *      </ul> otherwise true
    */
   public boolean addSeat(final Seat seat) {
     if (seat == null || numberOfSeats == MAX_NUM_OF_SEATS) {

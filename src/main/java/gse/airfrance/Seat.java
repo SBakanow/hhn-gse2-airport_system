@@ -1,7 +1,7 @@
 package gse.airfrance;
 
 /**
- * Seat class for AirFrance Project
+ * Seat class for AirFrance Project.
  *
  * @author Dennis Schneider
  */
@@ -11,8 +11,7 @@ public class Seat {
   private final String location;
   private Passenger thePassenger;
   private Flight theFlight;
-
-
+  
   private Plane thePlane;
 
   public Seat(String location) {
@@ -21,7 +20,7 @@ public class Seat {
   }
 
   /**
-   * Getter Class for the location of the Seat
+   * Getter Class for the location of the Seat.
    *
    * @return Seat ID
    */
@@ -35,7 +34,7 @@ public class Seat {
   }
 
   /**
-   * Cancels reservation of seat
+   * Cancels reservation of seat.
    */
   public void reserve() {
     System.out.println(this + " reserved.");

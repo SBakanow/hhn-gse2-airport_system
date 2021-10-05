@@ -19,7 +19,6 @@ public class Airline {
   public Airline(String IATACode, String name) {
     this.IATACode = IATACode;
     this.name = name;
-
     System.out.println(this + " created.");
   }
 
@@ -59,5 +58,4 @@ public class Airline {
   public void expensive() {
     System.out.println(this + " is expensive");
   }
-
 }

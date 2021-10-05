@@ -1,4 +1,3 @@
-
 package gse.airfrance;
 
 
@@ -17,18 +16,16 @@ public final class City {
     infrastructures = new Airport[5];
     this.name = name;
     arrayPosition = 0;
-
     System.out.println(this + " created.");
   }
-
-
+  
   /**
    * Takes an airport as an argument and adds it to the list.
    * The list can hold a maximum of five airports, any attempt to add more
    * than that will do nothing.
    *
    * @param airport The airport to add.
-   * @return True if the operation was successfull, otherwise false.
+   * @return True if the operation was successful, otherwise false.
    */
   public boolean addInfrastructure(final Airport airport) {
     if (arrayPosition < infrastructures.length && airport != null) {
@@ -80,4 +77,3 @@ public final class City {
   // of bounds when we try to add more elements into the array than possible.
   private byte arrayPosition;
 }
-

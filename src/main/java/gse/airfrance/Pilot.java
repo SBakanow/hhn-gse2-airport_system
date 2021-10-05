@@ -107,4 +107,3 @@ public class Pilot {
     System.out.println(this + " is fired.");
   }
 }
-
