@@ -124,4 +124,8 @@ public class Plane {
   public void deIce() {
     System.out.println(this + " was de-iced.");
   }
+
+  public void show() {
+    System.out.println(tailNr + " (" + model + ")");
+  }
 }

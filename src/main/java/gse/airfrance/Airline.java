@@ -58,4 +58,8 @@ public class Airline {
   public void expensive() {
     System.out.println(this + " is expensive");
   }
+
+  public void show() {
+    System.out.println("Offered by " + name + " (" + IATACode + ")");
+  }
 }

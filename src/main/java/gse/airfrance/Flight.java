@@ -1,7 +1,5 @@
 package gse.airfrance;
 
-import java.util.Date;
-
 /**
  * The flight class for the airport management system.
  *
@@ -13,7 +11,7 @@ public class Flight {
   private final short MAX_NUMBER_OF_SEATS = 853;
   private final byte MAX_NUMBER_STOPS = 5;
   private final byte MAX_NUMBER_CO_PILOTS = 2;
-  private final Date date;
+  private final String date;
   private final String flightNum;
 
   private final Seat[] theSeats = new Seat[MAX_NUMBER_OF_SEATS];
@@ -29,7 +27,7 @@ public class Flight {
   private int currentNumberCoPilots = 0;
   private int currentNumberSeats = 0;
 
-  public Flight(Date date, String flightNum) {
+  public Flight(String date, String flightNum) {
     this.date = date;
     this.flightNum = flightNum;
     System.out.println(this + " created.");
@@ -69,7 +67,7 @@ public class Flight {
     return flightNum;
   }
 
-  public Date getDate() {
+  public String getDate() {
     return date;
   }
 
@@ -180,7 +178,7 @@ public class Flight {
   @Override
   public String toString() {
     return this.getClass().getSimpleName() + " number " + flightNum + " starting at "
-        + date.toString();
+        + date;
   }
 
   /**
@@ -195,5 +193,29 @@ public class Flight {
    */
   public void canceled() {
     System.out.println(this + " is canceled.");
+  }
+
+  public void show() {
+    int count = 0;
+    System.out.println("Flight " + flightNum + " on " + date);
+    theAirline.show();
+    captain.show();
+    System.out.print("departing ");
+    origins[0].show();
+    System.out.print("arriving ");
+    destinations[0].show();
+    System.out.print("using ");
+    resource.show();
+    System.out.print("Carrying passengers ");
+    for(var passenger: theSeats) {
+      if(passenger != null)
+      {
+        if(count != 0) {
+          System.out.print(" and ");
+        }
+        passenger.show();
+        count++;
+      }
+    }
   }
 }

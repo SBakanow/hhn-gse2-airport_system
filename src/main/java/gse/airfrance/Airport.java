@@ -135,4 +135,9 @@ public final class Airport {
   public String toString() {
     return this.getClass().getSimpleName() + " " + name + " " + IATACode;
   }
+
+  public void show() {
+    System.out.print(name + " (" + IATACode + ")" + " near ");
+    catchments[0].show();
+  }
 }

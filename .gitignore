@@ -22,3 +22,4 @@
 
 # KPROG
 /zipfiles/
+*.DS_STORE

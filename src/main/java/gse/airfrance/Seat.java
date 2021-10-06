@@ -9,13 +9,17 @@ package gse.airfrance;
 public class Seat {
 
   private final String location;
+  private final int row;
+  private final char seat;
   private Passenger thePassenger;
   private Flight theFlight;
   
   private Plane thePlane;
 
-  public Seat(String location) {
+  public Seat(String location, int row, char seat) {
     this.location = location;
+    this.row = row;
+    this.seat = seat;
     System.out.println(this + " created.");
   }
 
@@ -60,7 +64,20 @@ public class Seat {
     return thePlane;
   }
 
+  public int getRow() {
+    return row;
+  }
+
+  public char getSeat() {
+    return seat;
+  }
+
   public void setThePlane(Plane thePlane) {
     this.thePlane = thePlane;
+  }
+
+  public void show() {
+    thePassenger.show();
+    System.out.print(" on seat " + seat + row);
   }
 }

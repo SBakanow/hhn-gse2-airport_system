@@ -76,4 +76,8 @@ public final class City {
   // know where in the static array we are and to make sure not to go out
   // of bounds when we try to add more elements into the array than possible.
   private byte arrayPosition;
+
+  public void show() {
+    System.out.println(name);
+  }
 }

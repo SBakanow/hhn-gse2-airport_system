@@ -106,4 +106,8 @@ public class Pilot {
   public void fire() {
     System.out.println(this + " is fired.");
   }
+
+  public void show() {
+    System.out.println("Flown by " + name);
+  }
 }

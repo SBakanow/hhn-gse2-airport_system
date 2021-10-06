@@ -18,7 +18,11 @@ public class Passenger {
     this.name = name;
     System.out.println(this + " created.");
   }
-  
+
+  public void addSeat(Seat seat) {
+    theSeats.add(seat);
+  }
+
   //get Passenger Name
   public String getName() {
     return name;
@@ -32,5 +36,9 @@ public class Passenger {
   @Override
   public String toString() {
     return this.getClass().getSimpleName() + " " + name;
+  }
+
+  public void show() {
+    System.out.print(name);
   }
 }
