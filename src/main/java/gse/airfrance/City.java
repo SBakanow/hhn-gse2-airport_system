@@ -18,7 +18,7 @@ public final class City {
     arrayPosition = 0;
     System.out.println(this + " created.");
   }
-  
+
   /**
    * Takes an airport as an argument and adds it to the list.
    * The list can hold a maximum of five airports, any attempt to add more
@@ -63,6 +63,15 @@ public final class City {
     return name;
   }
 
+  /**
+    * Show the name of the city.
+    *
+    * @author Denis Troccolo
+    */
+  public void show() {
+    System.out.println(name);
+  }
+
 
   @Override
   public String toString() {
@@ -76,8 +85,4 @@ public final class City {
   // know where in the static array we are and to make sure not to go out
   // of bounds when we try to add more elements into the array than possible.
   private byte arrayPosition;
-
-  public void show() {
-    System.out.println(name);
-  }
 }
