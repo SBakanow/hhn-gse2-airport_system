@@ -5,7 +5,6 @@ package gse.airfrance;
 **/
 public class AirFranceBuildUp {
 
-
   private Airport jfk;
   private Airport fra;
 
@@ -64,6 +63,9 @@ public class AirFranceBuildUp {
     buildFlight();
   }
 
+  /**
+    * @author Emin Hallaceli
+    */
   private void buildPlane() {
     F_HPJA.addMission(inFlight);
     F_HPJA.addMission(outFlight);
@@ -73,6 +75,9 @@ public class AirFranceBuildUp {
     F_HPJA.addSeat(c12);
   }
 
+  /**
+    * @author Noah Schmidt
+    */
   private void buildAirports() {
     jfk.addArrival(inFlight);
     jfk.addDeparture(outFlight);
@@ -83,17 +88,26 @@ public class AirFranceBuildUp {
     fra.addCatchment(frankfurt);
   }
 
+  /**
+    * @author Denis Troccolo
+    */
   private void buildCities() {
     frankfurt.addInfrastructure(fra);
     nyc.addInfrastructure(jfk);
   }
 
+  /**
+    * @author Dennis Adler
+    */
   private void buildPassengers() {
     denis.addSeat(c12);
     denis.addSeat(c34);
     sergej.addSeat(b12);
   }
 
+  /**
+    * @author Dennis Schneider
+    */
   private void buildSeats() {
     c12.setTheFlight(inFlight);
     c12.setThePassenger(denis);
@@ -107,18 +121,27 @@ public class AirFranceBuildUp {
     c34.setThePlane(F_HPJA);
   }
 
+  /**
+    * @author Furkan Aydin
+    */
   private void buildAirline() {
     af.addEmployee(whitaker);
     af.addTheFlights(inFlight);
     af.addTheFlights(outFlight);
   }
 
+  /**
+    * @author Sergej Bakanow
+    */
   private void buildPilots() {
     whitaker.addAssignment(inFlight);
     whitaker.addAssignment(outFlight);
     whitaker.setEmployer(af);
   }
 
+  /**
+    * @author Marvin Simon
+    */
   private void buildFlight() {
     inFlight.setCaptain(whitaker);
     inFlight.setResource(F_HPJA);

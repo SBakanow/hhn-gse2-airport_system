@@ -65,8 +65,6 @@ public final class City {
 
   /**
     * Show the name of the city.
-    *
-    * @author Denis Troccolo
     */
   public void show() {
     System.out.println(name);
