@@ -34,14 +34,14 @@ public class Seat {
 
   @Override
   public String toString() {
-    return this.getClass().getSimpleName() + " " + location;
+    return this.getClass().getSimpleName() + " " + location + " " + seat + row;
   }
 
   /**
    * Cancels reservation of seat.
    */
-  public void reserve() {
-    System.out.println(this + " reserved.");
+  public void reserve(Passenger passenger, Flight flight) {
+    System.out.println(passenger + " reserved seat for : " + flight);
   }
 
   public Passenger getThePassenger() {

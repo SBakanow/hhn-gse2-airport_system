@@ -103,8 +103,8 @@ public class Pilot {
   /**
    * Fires a pilot.
    */
-  public void fire() {
-    System.out.println(this + " is fired.");
+  public void fire(String date) {
+    System.out.println(this + " is fired.\n Date: " + date);
   }
 
   public void show() {
