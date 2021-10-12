@@ -17,7 +17,8 @@ public class Flight {
   private final LocalDateTime localDateTime;
   private final String flightNum;
 
-  private final BoardingPass[] theBoardingPasses = new BoardingPass[MAX_NUMBER_OF_PASSES_PER_FLIGHT];
+  private final BoardingPass[] theBoardingPasses =
+      new BoardingPass[MAX_NUMBER_OF_PASSES_PER_FLIGHT];
   private final Airport[] origins = new Airport[MAX_NUMBER_STOPS];
   private final Airport[] destinations = new Airport[MAX_NUMBER_STOPS];
   private final Pilot[] coPilots = new Pilot[MAX_NUMBER_CO_PILOTS];
@@ -200,10 +201,21 @@ public class Flight {
   }
 
   public void show() {
-    int count = 0;
-    System.out.println("Flight " + flightNum + " on " + localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
+    int boardingPassCount = 0;
+    System.out.println("Flight " + flightNum + " on "
+        + localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
     theAirline.show();
+    System.out.print("Flown by ");
     captain.show();
+    if (currentNumberCoPilots != 0) {
+      for (var coPilot : coPilots) {
+        if (coPilot != null) {
+          System.out.print(" and ");
+          coPilot.show();
+        }
+      }
+    }
+    System.out.println();
     System.out.print("departing ");
     origins[0].show();
     System.out.print("arriving ");
@@ -211,14 +223,13 @@ public class Flight {
     System.out.print("using ");
     resource.show();
     System.out.print("Carrying passengers ");
-    for(var boardingPass: theBoardingPasses) {
-      if(boardingPass != null)
-      {
-        if(count != 0) {
+    for (var boardingPass : theBoardingPasses) {
+      if (boardingPass != null) {
+        if (boardingPassCount != 0) {
           System.out.print(" and ");
         }
         boardingPass.show();
-        count++;
+        boardingPassCount++;
       }
     }
   }

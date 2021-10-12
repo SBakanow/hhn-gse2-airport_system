@@ -108,6 +108,6 @@ public class Pilot {
   }
 
   public void show() {
-    System.out.println("Flown by " + name);
+    System.out.print(name);
   }
 }
