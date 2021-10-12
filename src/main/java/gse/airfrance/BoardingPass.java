@@ -1,6 +1,8 @@
 package gse.airfrance;
 
 /**
+ * The boardingpass class for the airport management system.
+ *
  * @author Dennis Schneider, Marvin Simon, Dennis Adler
  */
 public class BoardingPass {
@@ -12,8 +14,7 @@ public class BoardingPass {
   private String terminal;
   private String gate;
 
-  BoardingPass(Passenger passenger, Flight flight, Seat seat)
-  {
+  BoardingPass(Passenger passenger, Flight flight, Seat seat) {
     this.theSeat = seat;
     this.thePassenger = passenger;
     this.theFlight = flight;
