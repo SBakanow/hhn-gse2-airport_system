@@ -11,8 +11,7 @@ public class Seat {
   private final String location;
   private final int row;
   private final char seat;
-  private Passenger thePassenger;
-  private Flight theFlight;
+
   
   private Plane thePlane;
 
@@ -44,21 +43,6 @@ public class Seat {
     System.out.println(passenger + " reserved seat for : " + flight);
   }
 
-  public Passenger getThePassenger() {
-    return thePassenger;
-  }
-
-  public void setThePassenger(Passenger thePassenger) {
-    this.thePassenger = thePassenger;
-  }
-
-  public Flight getTheFlight() {
-    return theFlight;
-  }
-
-  public void setTheFlight(Flight theFlight) {
-    this.theFlight = theFlight;
-  }
 
   public Plane getThePlane() {
     return thePlane;
@@ -77,7 +61,6 @@ public class Seat {
   }
 
   public void show() {
-    thePassenger.show();
-    System.out.print(" on seat " + seat + row);
+    System.out.print(" on seat " + row + seat);
   }
 }

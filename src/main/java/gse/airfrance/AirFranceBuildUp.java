@@ -1,41 +1,29 @@
 package gse.airfrance;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 /**
-* BuildUp class for Airport Management System.
-**/
+ * BuildUp class for Airport Management System.
+ **/
 public class AirFranceBuildUp {
 
-  private Airport jfk;
-  private Airport fra;
+  private final BoardingPass[] boardingPasses = new BoardingPass[3];
+  private final Airport jfk;
+  private final Airport fra;
+  private final Flight inFlight;
+  private final Flight outFlight;
+  private final City frankfurt;
+  private final City nyc;
+  private final Passenger denis;
+  private final Passenger sergej;
+  private final Airline af;
+  private final Seat b12;
+  private final Seat c12;
+  private final Seat c34;
+  private final Pilot whitaker;
+  private final Plane F_HPJA;
 
-  private Flight inFlight;
-  private Flight outFlight;
-
-  private City frankfurt;
-  private City nyc;
-
-  private Passenger denis;
-  private Passenger sergej;
-
-  private Airline af;
-
-  private Seat b12;
-  private Seat c12;
-  private Seat c34;
-
-  private Pilot whitaker;
-
-  private Plane F_HPJA;
-
-
-  public static void main(String[] args) {
-    var test = new AirFranceBuildUp();
-    System.out.println("____________________________________");
-    test.inFlight.show();
-    System.out.println();
-    System.out.println("____________________________________");
-    test.outFlight.show();
-  }
 
   public AirFranceBuildUp() {
     F_HPJA = new Plane("Airbus A380", "219031", "F-HPJA");
@@ -50,8 +38,8 @@ public class AirFranceBuildUp {
     c34 = new Seat("Economy", 34, 'C');
     af = new Airline("AF", "Air France");
     whitaker = new Pilot("John Whitaker");
-    inFlight = new Flight("2021-10-01", "AF1441");
-    outFlight = new Flight("2021-10-04", "AF1321");
+    inFlight = new Flight(LocalDate.now().atTime(LocalTime.now()), "AF1441");
+    outFlight = new Flight(LocalDate.now().plusDays(7).atTime(12, 59), "AF1321");
 
     buildAirline();
     buildPassengers();
@@ -60,12 +48,28 @@ public class AirFranceBuildUp {
     buildPilots();
     buildSeats();
     buildPlane();
+    buildBoardingPass();
     buildFlight();
   }
 
+  public static void main(String[] args) {
+    var test = new AirFranceBuildUp();
+    System.out.println("____________________________________");
+    test.inFlight.show();
+    System.out.println();
+    System.out.println("____________________________________");
+    test.outFlight.show();
+  }
+
+  private void buildBoardingPass() {
+    boardingPasses[0] = new BoardingPass(denis, inFlight, c12);
+    boardingPasses[1] = new BoardingPass(sergej, inFlight, b12);
+    boardingPasses[2] = new BoardingPass(denis, outFlight, c34);
+  }
+
   /**
-    * @author Emin Hallaceli
-    */
+   * @author Emin Hallaceli
+   */
   private void buildPlane() {
     F_HPJA.addMission(inFlight);
     F_HPJA.addMission(outFlight);
@@ -76,8 +80,8 @@ public class AirFranceBuildUp {
   }
 
   /**
-    * @author Noah Schmidt
-    */
+   * @author Noah Schmidt
+   */
   private void buildAirports() {
     jfk.addArrival(inFlight);
     jfk.addDeparture(outFlight);
@@ -89,41 +93,34 @@ public class AirFranceBuildUp {
   }
 
   /**
-    * @author Denis Troccolo
-    */
+   * @author Denis Troccolo
+   */
   private void buildCities() {
     frankfurt.addInfrastructure(fra);
     nyc.addInfrastructure(jfk);
   }
 
   /**
-    * @author Dennis Adler
-    */
+   * @author Dennis Adler
+   */
   private void buildPassengers() {
-    denis.addSeat(c12);
-    denis.addSeat(c34);
-    sergej.addSeat(b12);
+    denis.addBoardingPass(boardingPasses[0]);
+    denis.addBoardingPass(boardingPasses[1]);
+    sergej.addBoardingPass(boardingPasses[2]);
   }
 
   /**
-    * @author Dennis Schneider
-    */
+   * @author Dennis Schneider
+   */
   private void buildSeats() {
-    c12.setTheFlight(inFlight);
-    c12.setThePassenger(denis);
     c12.setThePlane(F_HPJA);
     b12.setThePlane(F_HPJA);
-    b12.setTheFlight(inFlight);
-    b12.setThePassenger(sergej);
-
-    c34.setThePassenger(denis);
-    c34.setTheFlight(outFlight);
     c34.setThePlane(F_HPJA);
   }
 
   /**
-    * @author Furkan Aydin
-    */
+   * @author Furkan Aydin
+   */
   private void buildAirline() {
     af.addEmployee(whitaker);
     af.addTheFlights(inFlight);
@@ -131,8 +128,8 @@ public class AirFranceBuildUp {
   }
 
   /**
-    * @author Sergej Bakanow
-    */
+   * @author Sergej Bakanow
+   */
   private void buildPilots() {
     whitaker.addAssignment(inFlight);
     whitaker.addAssignment(outFlight);
@@ -140,21 +137,21 @@ public class AirFranceBuildUp {
   }
 
   /**
-    * @author Marvin Simon
-    */
+   * @author Marvin Simon
+   */
   private void buildFlight() {
     inFlight.setCaptain(whitaker);
     inFlight.setResource(F_HPJA);
     inFlight.setTheAirline(af);
     inFlight.addDestination(jfk);
     inFlight.addOrigin(fra);
-    inFlight.addSeats(c12);
-    inFlight.addSeats(b12);
+    inFlight.addBoardingPass(boardingPasses[0]);
+    inFlight.addBoardingPass(boardingPasses[1]);
     outFlight.setCaptain(whitaker);
     outFlight.setResource(F_HPJA);
     outFlight.setTheAirline(af);
     outFlight.addDestination(fra);
     outFlight.addOrigin(jfk);
-    outFlight.addSeats(c34);
+    outFlight.addBoardingPass(boardingPasses[2]);
   }
 }

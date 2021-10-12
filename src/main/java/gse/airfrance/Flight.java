@@ -1,5 +1,8 @@
 package gse.airfrance;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  * The flight class for the airport management system.
  *
@@ -8,13 +11,13 @@ package gse.airfrance;
  */
 public class Flight {
   
-  private final short MAX_NUMBER_OF_SEATS = 853;
+  private final short MAX_NUMBER_OF_PASSES_PER_FLIGHT = 853;
   private final byte MAX_NUMBER_STOPS = 5;
   private final byte MAX_NUMBER_CO_PILOTS = 2;
-  private final String date;
+  private final LocalDateTime localDateTime;
   private final String flightNum;
 
-  private final Seat[] theSeats = new Seat[MAX_NUMBER_OF_SEATS];
+  private final BoardingPass[] theBoardingPasses = new BoardingPass[MAX_NUMBER_OF_PASSES_PER_FLIGHT];
   private final Airport[] origins = new Airport[MAX_NUMBER_STOPS];
   private final Airport[] destinations = new Airport[MAX_NUMBER_STOPS];
   private final Pilot[] coPilots = new Pilot[MAX_NUMBER_CO_PILOTS];
@@ -25,15 +28,19 @@ public class Flight {
   private int currentNumberOrigins = 0;
   private int currentNumberDestinations = 0;
   private int currentNumberCoPilots = 0;
-  private int currentNumberSeats = 0;
+  private int currentNumberOfPasses = 0;
 
-  public Flight(String date, String flightNum) {
-    this.date = date;
+  public Flight(LocalDateTime localDateTime, String flightNum) {
+    this.localDateTime = localDateTime;
     this.flightNum = flightNum;
     System.out.println(this + " created.");
   }
 
   // Begin of the getters
+
+  public LocalDateTime getLocalDate() {
+    return localDateTime;
+  }
 
   public Plane getResource() {
     return resource;
@@ -51,8 +58,8 @@ public class Flight {
     return theAirline;
   }
 
-  public Seat[] getTheSeats() {
-    return theSeats;
+  public BoardingPass[] getTheBoardingPasses() {
+    return theBoardingPasses;
   }
 
   public Airport[] getDestinations() {
@@ -67,9 +74,6 @@ public class Flight {
     return flightNum;
   }
 
-  public String getDate() {
-    return date;
-  }
 
   // Begin of the setters
   public void setResource(Plane resource) {
@@ -139,14 +143,14 @@ public class Flight {
    * There is no check with the machine used if max capacity is reached/over capacity.
    * There must not be a seat added with a null reference.
    *
-   * @param seat Seat to be added (one at a time)
+   * @param pass Seat to be added (one at a time)
    * @return True if the action was successful, else false.
    */
-  public boolean addSeats(Seat seat) {
+  public boolean addBoardingPass(BoardingPass pass) {
     boolean result = false;
-    if (seat != null && currentNumberSeats < MAX_NUMBER_OF_SEATS) {
-      theSeats[currentNumberSeats] = seat;
-      currentNumberSeats++;
+    if (pass != null && currentNumberOfPasses < MAX_NUMBER_OF_PASSES_PER_FLIGHT) {
+      theBoardingPasses[currentNumberOfPasses] = pass;
+      currentNumberOfPasses++;
       result = true;
     }
     return result;
@@ -178,7 +182,7 @@ public class Flight {
   @Override
   public String toString() {
     return this.getClass().getSimpleName() + " number " + flightNum + " starting at "
-        + date;
+        + localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
   }
 
   /**
@@ -197,7 +201,7 @@ public class Flight {
 
   public void show() {
     int count = 0;
-    System.out.println("Flight " + flightNum + " on " + date);
+    System.out.println("Flight " + flightNum + " on " + localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
     theAirline.show();
     captain.show();
     System.out.print("departing ");
@@ -207,13 +211,13 @@ public class Flight {
     System.out.print("using ");
     resource.show();
     System.out.print("Carrying passengers ");
-    for(var passenger: theSeats) {
-      if(passenger != null)
+    for(var boardingPass: theBoardingPasses) {
+      if(boardingPass != null)
       {
         if(count != 0) {
           System.out.print(" and ");
         }
-        passenger.show();
+        boardingPass.show();
         count++;
       }
     }

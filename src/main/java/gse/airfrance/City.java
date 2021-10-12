@@ -13,9 +13,7 @@ public final class City {
    * @param name The name of the city.
    */
   public City(final String name) {
-    infrastructures = new Airport[5];
     this.name = name;
-    arrayPosition = 0;
     System.out.println(this + " created.");
   }
 
@@ -28,9 +26,9 @@ public final class City {
    * @return True if the operation was successful, otherwise false.
    */
   public boolean addInfrastructure(final Airport airport) {
-    if (arrayPosition < infrastructures.length && airport != null) {
-      infrastructures[arrayPosition] = airport;
-      ++arrayPosition;
+    if (currentNumberOfInfrastructure < infrastructure.length && airport != null) {
+      infrastructure[currentNumberOfInfrastructure] = airport;
+      ++currentNumberOfInfrastructure;
       return true;
     }
     return false;
@@ -50,8 +48,8 @@ public final class City {
    *
    * @return The list of airports.
    */
-  public Airport[] getInfrastructures() {
-    return infrastructures;
+  public Airport[] getInfrastructure() {
+    return infrastructure;
   }
 
   /**
@@ -73,14 +71,11 @@ public final class City {
 
   @Override
   public String toString() {
-    return String.format(City.class.getSimpleName() + " " + name);
+    return City.class.getSimpleName() + " " + name;
   }
 
 
-  private final Airport[] infrastructures;
+  private final Airport[] infrastructure = new Airport[5];
   private String name;
-  // Since Java can't do local static, we need a private position field to
-  // know where in the static array we are and to make sure not to go out
-  // of bounds when we try to add more elements into the array than possible.
-  private byte arrayPosition;
+  private byte currentNumberOfInfrastructure = 0;
 }

@@ -11,7 +11,7 @@ public class Passenger {
 
   private String name;
   //Seat List
-  private final ArrayList<Seat> theSeats = new ArrayList<>();
+  private final ArrayList<BoardingPass> theBoardingPasses = new ArrayList<>();
   
   //Passenger Builder
   public Passenger(String name) {
@@ -19,8 +19,8 @@ public class Passenger {
     System.out.println(this + " created.");
   }
 
-  public void addSeat(Seat seat) {
-    theSeats.add(seat);
+  public void addBoardingPass(BoardingPass boardingPass) {
+    theBoardingPasses.add(boardingPass);
   }
 
   //get Passenger Name

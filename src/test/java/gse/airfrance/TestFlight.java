@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 public class TestFlight {
@@ -24,7 +26,7 @@ public class TestFlight {
 
     @Before
     public void setup() {
-        flight1 = new Flight("2021-10-10",  "AB5");
+        flight1 = new Flight(LocalDate.now().atTime(LocalTime.now()), "AB5");
         captain = new Pilot("John Doe");
         firstCoPilot = new Pilot("Jane Dodo");
         secondCoPilot = new Pilot("James Dodo");
