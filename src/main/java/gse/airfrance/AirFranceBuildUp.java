@@ -53,14 +53,17 @@ public class AirFranceBuildUp {
   }
 
   public static void main(String[] args) {
-    var test = new AirFranceBuildUp();
+    AirFranceBuildUp airFranceTransportationSystem = new AirFranceBuildUp();
     System.out.println("____________________________________");
-    test.inFlight.show();
+    airFranceTransportationSystem.inFlight.show();
     System.out.println();
     System.out.println("____________________________________");
-    test.outFlight.show();
+    airFranceTransportationSystem.outFlight.show();
   }
 
+  /**
+   * @author Dennis Adler, Dennis Schneider, Marvin Simon
+   */
   private void buildBoardingPass() {
     boardingPasses[0] = new BoardingPass(denis, inFlight, c12);
     boardingPasses[1] = new BoardingPass(sergej, inFlight, b12);
