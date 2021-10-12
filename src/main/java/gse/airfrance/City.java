@@ -7,6 +7,10 @@ package gse.airfrance;
  * @author Denis Troccolo
  */
 public final class City {
+  private final Airport[] infrastructure = new Airport[5];
+  private String name;
+  private byte currentNumberOfInfrastructure = 0;
+
   /**
    * The constructor takes in the name of the city.
    *
@@ -35,15 +39,6 @@ public final class City {
   }
 
   /**
-   * Set the name of the city.
-   *
-   * @param name of the city.
-   */
-  public void setName(final String name) {
-    this.name = name;
-  }
-
-  /**
    * Get the list of airports.
    *
    * @return The list of airports.
@@ -62,20 +57,23 @@ public final class City {
   }
 
   /**
+   * Set the name of the city.
+   *
+   * @param name of the city.
+   */
+  public void setName(final String name) {
+    this.name = name;
+  }
+
+  /**
     * Show the name of the city.
     */
   public void show() {
     System.out.println(name);
   }
 
-
   @Override
   public String toString() {
     return City.class.getSimpleName() + " " + name;
   }
-
-
-  private final Airport[] infrastructure = new Airport[5];
-  private String name;
-  private byte currentNumberOfInfrastructure = 0;
 }

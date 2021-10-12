@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
  * @version 0.1
  */
 public class Flight {
-  
+
   private final short MAX_NUMBER_OF_PASSES_PER_FLIGHT = 853;
   private final byte MAX_NUMBER_STOPS = 5;
   private final byte MAX_NUMBER_CO_PILOTS = 2;
