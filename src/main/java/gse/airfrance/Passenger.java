@@ -12,7 +12,7 @@ public class Passenger {
   private String name;
   //Seat List
   private final ArrayList<BoardingPass> theBoardingPasses = new ArrayList<>();
-  
+
   //Passenger Builder
   public Passenger(String name) {
     this.name = name;
@@ -21,6 +21,10 @@ public class Passenger {
 
   public void addBoardingPass(BoardingPass boardingPass) {
     theBoardingPasses.add(boardingPass);
+  }
+
+  public ArrayList<BoardingPass> getTheBoardingPasses() {
+    return theBoardingPasses;
   }
 
   //get Passenger Name
