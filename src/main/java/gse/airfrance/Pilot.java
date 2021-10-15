@@ -107,6 +107,9 @@ public class Pilot {
     System.out.println(this + " is fired.\n Date: " + date);
   }
 
+  /**
+   * Prints the name of the Pilot.
+   */
   public void show() {
     System.out.print(name);
   }
